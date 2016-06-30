@@ -36,7 +36,7 @@ tmr.alarm(0, 2000, tmr.ALARM_AUTO, function()
         eventHub.Connection = getConn()
         eventHub.Body = "{'LDR': '" .. ldr_value .. "'}"
         eventHub.ContentLength = string.len(eventHub.Body)
-        eventHub.Headers = " HTTP/1.1\r\nHost: nhdnugiot.servicebus.windows.net\r\nConnection: Keep-Alive\r\n"
+        eventHub.Headers = " HTTP/1.1\r\nHost: [namespace].servicebus.windows.net\r\nConnection: Keep-Alive\r\n"
         eventHub.Headers = eventHub.Headers .. "Content-Type: application/json; charset=utf-8\r\n"
         eventHub.Headers = eventHub.Headers .. "Content-Length: " .. eventHub.ContentLength .. "\r\n"
         eventHub.Headers = eventHub.Headers .. "Authorization: " .. eventHub.Token .. "\r\n"
